@@ -1,0 +1,9 @@
+# 阶段 3：精细化消融实验，锁定 20-40 步之间的饱和拐点
+name: "saturation_refine"
+num_samples: 5000
+batch_size: 128         # 优化 4060 显存利用率
+trials: 3
+eps_list: [8]
+step_list: [20, 25, 30, 35, 40]
+alpha: 2
+save_path: "results/saturation_refine/data.csv"

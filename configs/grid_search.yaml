@@ -3,7 +3,7 @@ name: "grid_search"
 num_samples: 5000
 batch_size: 64
 trials: 3
-eps_list: [4, 8, 16]    # 整数输入，代码会自动处理为 /255
+eps_list: [4,8,16]    # 整数输入，代码会自动处理为 /255
 step_list: [5, 10, 20]
 alpha: 2                # 步长设为 2/255
 save_path: "results/grid/data.csv"

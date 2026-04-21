@@ -26,20 +26,20 @@
 ## 3. 实验过程与结果分析 (Results & Analysis)
 
 ### 3.1 第一阶段：网格搜索与参数敏感性 (Grid Search)
-**目的**：探索扰动预算 $\epsilon$ 与迭代步数 Steps 对迁移 ASR 的协同影响。
+**目的**：探索扰动预算 epsilon 与迭代步数 Steps 对迁移 ASR 的协同影响。
 
 ![图 1：ASR 热力图](../results/grid/asr_heatmap_grid_search.png)
-*注：热力图展示了 $\epsilon$ 与 Steps 的正相关性，源模型 ASR 在所有非零配置下均达到 100%。*
+*注：热力图展示了 epsilon 与 Steps 的正相关性，源模型 ASR 在所有非零配置下均达到 100%。*
 
 **实验发现**：
-* **基准对齐**：在 $\epsilon=0$ 时，源模型 ASR 完美归零，证明了实验设计的严谨性。
+* **基准对齐**：在 epsilon=0 时，源模型 ASR 完美归零，证明了实验设计的严谨性。
 * **迁移损耗**：由于 ResNet 与 VGG 架构差异巨大，迁移 ASR 存在显著损耗。在 $\epsilon=8/255$、Steps=20 时，迁移 ASR 达到 **57.3%**。
 * **线性增长**：在 5-20 步区间内，ASR 随 Steps 增加呈明显的线性增长，尚未触及性能瓶颈。
 
 ---
 
 ### 3.2 第二阶段：长距离步数饱和性探测 (Saturation Study)
-**目的**：固定 $\epsilon=8/255$，将步数推至 100 步，寻找攻击效能的物理极限与回落点。
+**目的**：固定 epsilon=8/255，将步数推至 100 步，寻找攻击效能的物理极限与回落点。
 
 ![图 2：饱和度趋势对比图](../results/saturation/asr_comparison_saturation.png)
 *注：展现了从 5 步到 100 步的长期演化趋势。*
